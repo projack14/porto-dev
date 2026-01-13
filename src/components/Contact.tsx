@@ -60,7 +60,7 @@ export default function Contact() {
 							className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/50 transition">
 							<Github className="text-cyan-400 group-hover:scale-110 transition" />
 							<span className="text-gray-300 group-hover:text-white">
-								github.com/yourusername
+								projack14
 							</span>
 						</a>
 
@@ -71,7 +71,7 @@ export default function Contact() {
 							className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/50 transition">
 							<Linkedin className="text-cyan-400 group-hover:scale-110 transition" />
 							<span className="text-gray-300 group-hover:text-white">
-								linkedin.com/in/yourusername
+								Zakaria Saputra
 							</span>
 						</a>
 
@@ -82,7 +82,7 @@ export default function Contact() {
 							className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/50 transition">
 							<Instagram className="text-cyan-400 group-hover:scale-110 transition" />
 							<span className="text-gray-300 group-hover:text-white">
-								instagram.com/yourusername
+								@haijack__
 							</span>
 						</a>
 					</div>
