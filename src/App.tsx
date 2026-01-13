@@ -4,10 +4,12 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import GlowCursor from './components/GlowCursor';
 
 export default function App() {
 	return (
 		<div>
+			<GlowCursor />
 			<Navbar />
 			<Hero />
 			<About />

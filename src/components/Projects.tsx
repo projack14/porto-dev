@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import tesman from '../assets/tesman.png';
-import astina from '../assets/astina.png';
-import superapps from '../assets/superapps.png';
-import sroja from '../assets/sroja.png';
+import tesman from '../assets/tesman.webp';
+import astina from '../assets/astina.webp';
+import superapps from '../assets/superapps.webp';
+import sroja from '../assets/sroja.webp';
 
 const projects = [
 	{

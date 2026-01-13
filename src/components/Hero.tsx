@@ -17,9 +17,9 @@ export default function Hero() {
 				transition={{ duration: 1 }}
 				className="relative z-10 text-center max-w-3xl px-6">
 				<h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-					<span className="bg-white/60">Hi, I’m </span>
-					<span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-						Zakaria
+					<span className="bg-white/60 mr-3">Hi, I’m </span>
+					<span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent inline-block">
+						Zakaria Saputra
 					</span>
 				</h1>
 
