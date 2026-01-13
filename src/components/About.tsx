@@ -43,7 +43,7 @@ export default function About() {
 					<p className="text-gray-400 leading-relaxed">
 						Selama ini saya banyak mengerjakan{' '}
 						<span className="text-white">dashboard admin</span>, sistem KYC,
-						payment, online-shop, tes prosikologi dan aplikasi absensi — bukan
+						payment, online-shop, tes psikologi dan aplikasi absensi — bukan
 						sekadar landing page, tapi produk yang benar-benar dipakai user.
 					</p>
 
