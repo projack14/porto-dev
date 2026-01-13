@@ -45,7 +45,7 @@ export default function Contact() {
 					<div className="relative space-y-5">
 						{/* Email */}
 						<a
-							href="mailto:youremail@gmail.com"
+							href="mailto:zakaria.zrs14@gmail.com"
 							className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/50 transition">
 							<Mail className="text-cyan-400 group-hover:scale-110 transition" />
 							<span className="text-gray-300 group-hover:text-white">
