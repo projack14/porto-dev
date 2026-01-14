@@ -23,32 +23,32 @@ const techStack = [
 const systems = [
 	{
 		title: 'Payment Integration',
-		desc: 'Midtrans / Stripe style flow, invoice, status, webhook, dan reconciliation',
+		desc: 'Midtrans / Stripe-style flows, invoicing, payment status, webhooks, and reconciliation',
 		icon: <SiStripe />,
 	},
 	{
-		title: 'KYC & Verification',
-		desc: 'Upload KTP, selfie, NIK Dukcapil validation, approval flow',
+		title: 'KYC & Identity Verification',
+		desc: 'ID upload, selfie verification, Dukcapil NIK validation, and approval workflows',
 		icon: <SiFirebase />,
 	},
 	{
 		title: 'Mapping & Geolocation',
-		desc: 'Outlet location, radius, koordinat, Google Maps API',
+		desc: 'Outlet locations, radius-based coverage, coordinates, and Google Maps API',
 		icon: <SiGooglemaps />,
 	},
 	{
 		title: 'Admin Dashboard',
-		desc: 'User management, role, pagination, filter, export CSV',
+		desc: 'User management, roles, pagination, filtering, and CSV export',
 		icon: <SiReact />,
 	},
 	{
 		title: 'Attendance System',
-		desc: 'Kode kelas, validasi, status hadir / izin / alpha',
+		desc: 'Class codes, validation, and attendance status (present, excused, absent)',
 		icon: <SiTypescript />,
 	},
 	{
 		title: 'Data Reporting',
-		desc: 'Summary, grafik, PDF export, realtime API',
+		desc: 'Summaries, charts, PDF exports, and real-time APIs',
 		icon: <SiPostman />,
 	},
 ];

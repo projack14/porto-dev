@@ -7,25 +7,25 @@ import sroja from '../assets/sroja.webp';
 const projects = [
 	{
 		title: 'PSI SIM Online',
-		desc: 'Sistem psikotes online untuk SIM berbasis web yang digunakan secara nasional.',
+		desc: 'A nationwide web-based psychological testing system for driver’s license applications.',
 		image: tesman,
 		link: 'https://tesman.psisimonline.id/',
 	},
 	{
 		title: 'ASTINA Polri',
-		desc: 'Dashboard administrasi dan manajemen data internal kepolisian.',
+		desc: 'An internal administrative and data management dashboard for the Indonesian National Police.',
 		image: astina,
 		link: 'https://astina.polri.go.id/',
 	},
 	{
-		title: 'SROJA Fashion',
-		desc: 'E-commerce website untuk brand fashion dengan katalog, cart, dan checkout.',
+		title: 'SROJA',
+		desc: 'An e-commerce website for a fashion brand featuring product catalogs, shopping cart, and checkout.',
 		image: sroja,
 		link: 'https://sroja.com/',
 	},
 	{
 		title: 'Presisi Admin Polri',
-		desc: 'Admin panel untuk sistem Presisi Polri: monitoring, approval, dan reporting.',
+		desc: 'An admin panel for the Presisi Polri system, including monitoring, approvals, and reporting features.',
 		image: superapps,
 		link: 'https://presisi-admin.polri.go.id/',
 	},
