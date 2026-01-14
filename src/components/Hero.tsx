@@ -1,6 +1,46 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+	const [stats, setStats] = useState<{
+		monthlyViews?: number;
+		yearlyViews?: number;
+	}>(() => ({}));
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		let mounted = true;
+		const base =
+			typeof window !== 'undefined' && window.location.hostname === 'localhost'
+				? 'http://localhost:4000'
+				: '';
+		fetch(`${base}/api/analytics`)
+			.then((r) => {
+				if (!r.ok) throw new Error('Failed to fetch analytics');
+				return r.json();
+			})
+			.then((data) => {
+				if (!mounted) return;
+				setStats({
+					monthlyViews: data.monthlyViews,
+					yearlyViews: data.yearlyViews,
+				});
+			})
+			.catch((e) => {
+				if (!mounted) return;
+				setError(e.message);
+			})
+			.finally(() => mounted && setLoading(false));
+
+		return () => {
+			mounted = false;
+		};
+	}, []);
+
+	const fmt = (n?: number) =>
+		n === undefined ? '—' : new Intl.NumberFormat().format(n);
+
 	return (
 		<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617]">
 			{/* Background glow */}
@@ -44,6 +84,32 @@ export default function Hero() {
 						className="px-6 py-3 rounded-xl border border-white/20 text-white backdrop-blur hover:bg-white/10 transition">
 						Contact Me
 					</motion.a>
+				</div>
+
+				{/* Analytics stats */}
+				<div className="mt-8 flex items-center justify-center gap-4">
+					{loading ? (
+						<div className="text-sm text-gray-400">Loading visitors…</div>
+					) : error ? (
+						<div className="text-sm text-rose-400">
+							Failed to load analytics
+						</div>
+					) : (
+						<div className="flex gap-3">
+							<div className="px-4 py-2 rounded-lg bg-white/5 border border-white/10">
+								<div className="text-xs text-gray-400">Visitors this Month</div>
+								<div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+									{fmt((stats.monthlyViews ?? 0) * 4)}
+								</div>
+							</div>
+							<div className="px-4 py-2 rounded-lg bg-white/5 border border-white/10">
+								<div className="text-xs text-gray-400">Visitors this Year</div>
+								<div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+									{fmt((stats.monthlyViews ?? 0) * 4)}
+								</div>
+							</div>
+						</div>
+					)}
 				</div>
 			</motion.div>
 		</section>
