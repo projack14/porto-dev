@@ -7,7 +7,7 @@ export default function About() {
 			id="about"
 			className="relative py-32 px-6 bg-[#020617]">
 			<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-				{/* Foto */}
+				{/* Photo */}
 				<motion.div
 					initial={{ opacity: 0, x: -40 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -34,17 +34,17 @@ export default function About() {
 					</h2>
 
 					<p className="text-gray-400 leading-relaxed">
-						Saya adalah seorang{' '}
-						<span className="text-white">Frontend Web Developer</span> yang
-						fokus membangun aplikasi web modern, cepat, dan scalable.
-						Spesialisasi saya ada di React, TypeScript, dan sistem berbasis API.
+						I am a <span className="text-white">Frontend Web Developer</span>{' '}
+						focused on building modern, fast, and scalable web applications. My
+						main specialties are React, TypeScript, and API-driven systems.
 					</p>
 
 					<p className="text-gray-400 leading-relaxed">
-						Selama ini saya banyak mengerjakan{' '}
-						<span className="text-white">dashboard admin</span>, sistem KYC,
-						payment, online-shop, tes psikologi dan aplikasi absensi — bukan
-						sekadar landing page, tapi produk yang benar-benar dipakai user.
+						I have worked extensively on{' '}
+						<span className="text-white">admin dashboards</span>, KYC systems,
+						payments, e-commerce platforms, psychological tests, and attendance
+						applications — not just landing pages, but real-world products used
+						by actual users.
 					</p>
 
 					{/* Stats */}
