@@ -1,10 +1,7 @@
 import http from 'http';
 import { parse } from 'url';
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-// Prefer CommonJS variant for local dev when project uses ESM
-const handler = require('../api/analytics/index.cjs');
+// Import the ESM analytics handler dynamically (works both locally and on Vercel)
+const { default: handler } = await import('../api/analytics/index.js');
 
 const port = process.env.PORT || 4000;
 
