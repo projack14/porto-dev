@@ -1,14 +1,11 @@
 import http from 'http';
 import { parse } from 'url';
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-// Prefer CommonJS variant for local dev when project uses ESM
-const handler = require('../api/analytics/index.cjs');
+// Import the ESM analytics handler dynamically (works both locally and on Vercel)
+const { default: handler } = await import('../api/analytics/index.js');
 
 const port = process.env.PORT || 4000;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   const { pathname } = parse(req.url || '');
   // simple CORS for local dev
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -23,11 +20,27 @@ const server = http.createServer((req, res) => {
 
   if (pathname === '/api/analytics') {
     try {
-      handler(req, res);
+      if (typeof res.status !== 'function') {
+        res.status = function (code) {
+          this.statusCode = code;
+          return this;
+        };
+        res.json = function (obj) {
+          this.setHeader('Content-Type', 'application/json');
+          this.end(JSON.stringify(obj));
+        };
+      }
+
+      // handler may be async
+      await handler(req, res);
     } catch (err) {
       console.error('Handler error', err);
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'handler exception' }));
+      try {
+        res.status(500).json({ error: 'handler exception', detail: String(err) });
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'handler exception' }));
+      }
     }
     return;
   }
