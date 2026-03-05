@@ -105,7 +105,7 @@ export default function Hero() {
 							<div className="px-4 py-2 rounded-lg bg-white/5 border border-white/10">
 								<div className="text-xs text-gray-400">Visitors this Year</div>
 								<div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-									{fmt((stats.monthlyViews ?? 0) * 4)}
+									{fmt((stats.yearlyViews ?? 0) * 4)}
 								</div>
 							</div>
 						</div>
